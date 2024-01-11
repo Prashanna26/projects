@@ -105,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function onClickEditBtn(event) {
     const edit_index_id = event.currentTarget.dataset.editId;
+    const message_text = document.getElementById("writing_space")
+
+
+
     id_edit = {
       'message': edit_index_id
     }
@@ -116,22 +120,16 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(id_edit)
     })
 
-    fetch("/edit-button"), {
-      headers: {
-        'Content-type': 'application/json'
-      }
-    }
     .then(response => {
-      response.text();
+      if (!response.ok) {
+        throw new Error('Network response was not OK');
+      }
+      return response.text();
     })
-
     .then(data => {
-      const inputField = document.getElementById("writing_space")
-      const datentime = document.getElementById("datentime")
-      const dataArray = data.split(',');
-      console.log(data)
-      inputField.value = dataArray[0]
-      datentime.value = dataArray[1]
+      const dataArray = data.split(',')
+      document.getElementById("writing_space").value = dataArray[0]
+      document.getElementById("datentime").value =dataArray[1].trim()
       getTasks();
     })
     .catch(error => {
@@ -140,3 +138,5 @@ document.addEventListener("DOMContentLoaded", function () {
   
   }
 })  
+
+

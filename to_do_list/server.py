@@ -49,6 +49,7 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
+            self.edit_file(edit_id)
             
 
         else:
@@ -60,12 +61,6 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             self.send_to_html()
-
-        elif self.path == '/edit-button':
-            self.send_response(200)
-            self.send_header('Content-type', 'text/html')
-            self.end_headers()
-            self.edit_file()
                           
         else:
             return http.server.SimpleHTTPRequestHandler.do_GET(self)                 
@@ -102,17 +97,16 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
             task[status_index]['status'] = 0
             print(f"Status of {status_index} was changed to 0")
 
-    def edit_file(self):
-        message_value = task[edit_id]['task']
-        date_value = task[edit_id]['date_time']
+    def edit_file(self,edit_id):
+        task_id = task[edit_id]
+        message_value = task_id['task']
+        date_value = task_id['date_time']
+        content = f'{message_value}, {date_value}'
+        self.wfile.write(content.encode())
         self.del_file(edit_id)
-        self.wfile.write(f'{message_value}, {date_value}'.encode())
-        print(edit_id)
-        
-
         
 # Set the port number
-port = 8006
+port = 8005
 
 # Use the custom handler with the server
 handler = MyHttpRequestHandler
