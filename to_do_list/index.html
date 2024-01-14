@@ -7,17 +7,34 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <form id="myForm">
-    <h1 class="text_title" >TO DO LIST</h1>
+  <div class="outerbox">
+    <form id="myForm">
+      <div class="Title">
+        <br><br>
+        <i class="fa fa-check-square" aria-hidden="true"></i>
+        <label class="text_title" >TO DO LIST</label><br>
+      </div><br>
 
-    <label for="Text_box" class="enterText"><b>Enter text</b></label><br>
-    <input type="text" class="writing_space" id="writing_space" required><br><br>
-    
-    <label for="datentime" class="dateText"><b>Date and time:</b></label><br>
-    <input type="datetime-local" id = "datentime" class="timendate" min="" required><br><br>
+      <input type="text" class="writing_space" id="writing_space" required>
+      <input type="submit" value="Add" class="submit_btn"><br><br>
 
-    <input type="submit" value="+" class="submit_btn"><br><br><br>
-  </form>
-  <div id="output"></div>
+      <div class="divComb">
+        <div class="divDnT">
+          <label for="datentime" class="dateTime"><b>Date and Time:</b></label><br>
+          <input type="datetime-local" id = "datentime" class="timendate" required>
+        </div>
+
+        <div class="divPrio">
+          <label for="Priority" class="priority"><b>Set your priority:</b></label><br>
+          <select name="Priority" id="set_priority" class="selectbox">
+            <option value="0">low</option>
+            <option value="1">high</option>
+          </select><br><br>
+        </div>
+      </div>
+    </form><br><br>
+    <div id="output"></div>
+  </div>
+
 </body>
 </html>

@@ -1,18 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
+  var currentDate = new Date();
+  var nepalOffset = 5 * 60 + 45;
+  var nepalTime = new Date(currentDate.getTime() + nepalOffset * 60000);
+  const today = nepalTime.toISOString().slice(0, 16);
+  const datentime = document.getElementById("datentime")
+  datentime.min = today;
   getTasks()
 
   document.getElementById("myForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
     const inputField = document.getElementById("writing_space")
     const datentime = document.getElementById("datentime")
+    const priority = document.getElementById("set_priority")
+    
     const date = datentime.value;
     const text_data = inputField.value;
+    const priority_value = priority.value;
     inputField.value = ''
     datentime.value = ''
     const data = {
       'message': text_data,
-      'Date':date,
-      'status': 0
+      'date':date,
+      'status': 0,
+      'priority': priority_value,
+      'created_date':today
     };
 
     fetch("/button-clicked", {
@@ -105,38 +116,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function onClickEditBtn(event) {
     const edit_index_id = event.currentTarget.dataset.editId;
-    const message_text = document.getElementById("writing_space")
-
-
-
+    const message_text = document.getElementById("writing_space").value
     id_edit = {
       'message': edit_index_id
     }
-    fetch("/edit-button", {
-      method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(id_edit)
-    })
+    if (message_text != ''){
+        alert('Arko file edit bhairako cha la!!')
+    }
+    else{
 
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not OK');
-      }
-      return response.text();
-    })
-    .then(data => {
-      const dataArray = data.split(',')
-      document.getElementById("writing_space").value = dataArray[0]
-      document.getElementById("datentime").value =dataArray[1].trim()
-      getTasks();
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  
+      fetch("/edit-button", {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(id_edit)
+      })
+
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.text();
+      })
+      .then(data => {
+        const dataArray = data.split('; ')
+        document.getElementById("writing_space").value = dataArray[0]
+        document.getElementById("datentime").value = dataArray[1].trim()
+        document.getElementById("set_priority").value = dataArray[2].trim()
+        getTasks();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
   }
 })  
-
 
