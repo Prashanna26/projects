@@ -3,7 +3,7 @@ from flask import session
 
 class ModelHomeData():
     def __init__(self):
-        self.path = '/Users/macbook/Documents/Python/Flask/model_data/home_data.json'
+        self.path = 'model_data/home_data.json'
         self.data = self.load_item()
 
     def load_item(self):

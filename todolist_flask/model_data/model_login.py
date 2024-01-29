@@ -2,7 +2,7 @@ import json
 
 class ModelLoginData():
     def __init__(self):
-        self.path = '/Users/macbook/Documents/Python/Flask/model_data/login_data.json'
+        self.path = 'model_data/login_data.json'
         self.data = self.load_item()
 
     def load_item(self):
