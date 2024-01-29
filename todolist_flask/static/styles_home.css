@@ -1,0 +1,238 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: linear-gradient(to right, #134E5E, #71B280);
+    display:grid;
+    height: 100vh;
+    place-items: center;
+}
+
+
+
+.outerbox {
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 800px;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outerbox .text_title{
+    text-align: center;
+    color: #3d9551;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+.outerbox .fa.fa-check-square{
+    text-align: center;
+    color: #3d9551;
+    font-size: 50px;
+}
+
+.writing_space{
+    border-radius: 10px;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(0 ,0 ,0 , 0.3);
+    width: 600px;
+    height: 35px;
+    padding-left: 12px;
+}
+
+.combineDTP{
+    display: flex;
+    width:100%
+}
+
+.DTdiv{
+    width: 52%
+}
+
+.Pdiv{
+    width: 43%
+}
+
+.dateTime{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3d9551;
+    font-size: 12px;
+    margin-left: 6px;
+    margin-top: 10px;
+}
+
+.priority{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3d9551;
+    font-size: 12px;
+    margin-left: 6px;
+    margin-top: 10px;
+}
+
+.timendate{
+    border-radius: 3px;
+    border: 1px solid rgba(0 ,0 ,0 , 0.2);
+    outline: none;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 5px;
+}
+
+.selectbox{
+    border-radius: 3px;
+    border: 1px solid rgba(0 ,0 ,0 , 0.2);
+    outline: none;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 5px;
+}
+
+.submit_btn{
+    background-color: #3d9551;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: 1px solid #3d9551;
+    height: 35px;
+    width: 70px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.submit_btn:hover{
+    background-color: rgb(239, 239, 239);
+    color: #3d9551;
+}
+
+.container{
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    border:0px solid white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+    width:650px;
+    height:90px
+}
+
+.container.check{
+    position: relative;
+    background: rgba(140, 229, 164, 0.246);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    border:3px solid green;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+    width:650px;
+    height:90px
+}
+
+.container.prio_yes{
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    border:2px solid rgb(103, 33, 33);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+    width:650px;
+    height:90px
+}
+
+.create_date{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    color: rgb(25, 25, 25);
+    border-right: 1px solid rgb(50, 50, 50);
+    height: 21px;
+    width: 77px;
+    bottom: 7px;
+    right: 140px;
+}
+
+.date_cont{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    color: rgb(25, 25, 25);
+    height: 20px;
+    width: 130px;
+    bottom: 7px;
+    left: 8px;
+}
+
+.edit_button{
+    position: absolute;
+    display: inline-block;
+    border-right: 1px solid rgb(50, 50, 50);
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background: transparent;
+    font-size: 12px;
+    width: 35px;
+    height: 15px;
+    bottom: 10px;
+    right: 59px;
+}
+.edit_button:hover{
+    font-size: 15px;
+}
+
+.com_button{
+    position: absolute;
+    display: inline-block;
+    border-right: 1px solid rgb(50, 50, 50);
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    background: transparent ;
+    font-size: 12px;
+    width: 35px;
+    height: 15px;
+    bottom: 10px;
+    right: 100px;
+}
+.com_button:hover{
+    font-size: 15px;
+}
+
+.del_button{
+    position: absolute;
+    display: inline-block;
+    border: 0px;
+    background: transparent ;
+    font-size: 12px;
+    width: 35px;
+    height: 15px;
+    bottom: 10px;
+    right: 13px;
+}
+
+.del_button:hover{
+    font-size: 15px;
+}
+
+.backbutton{
+    background-color: #ffffff;
+    color: #3d9551;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    font-size: 12px;
+    border: 0px;
+    height: 25px;
+    width: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+

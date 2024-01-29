@@ -1,0 +1,76 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #134E5E, #71B280);
+    height: 100vh;
+}
+form{
+    display: flex;
+    flex-direction:column;
+}
+
+.divbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    height: 600px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+.divbox .indivText{
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.divbox .fa.fa-eye{
+    text-align: center;
+    font-size: 50px;
+}
+.divbox .textinLog{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divbox .textArea{
+    border: 1px solid rgba(0 ,0 ,0 , 0.3);
+    outline: none;
+    border-radius: 5px;
+    background: transparent;
+    height: 50px;
+    width: 300px;
+}
+
+.error{
+    color: red;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divbox .buttonlog{
+    background-color: #3d9551;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border: 0px;
+    height: 35px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.divbox .buttonlog:hover{
+    background-color: rgb(239, 239, 239);
+    color: #3d9551;
+
+}
+
+.signup{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3d9551;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
